@@ -42,7 +42,6 @@ let currentPage;
 // identify() will be called when a user logs in, or refreshes the page.
 if (settings.track_users && currentUser && !userID) {
     api.container.lookup('store:main').find('user', currentUser.username).then((user) => {
-		console.log(user);
         userID = user.email;
         analytics.identify(userID);
     });
